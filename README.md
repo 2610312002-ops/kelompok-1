@@ -1,8 +1,8 @@
 # kelompok-2
 # Mini Programming Project
 ## 1. Group Information
-**Class:** A/B/C/D
-**Group:** 1
+**Class:** A
+**Group:** 2
 ### Group Members
 | No. | Name | Student ID | Role |
 |---|---|---|---|
