@@ -30,21 +30,26 @@ This project is designed to apply the following programming concepts:
 - JavaScript
 ---
 ## 5. Input
-- Harga barang
-- Jumlah Barang
+- product name
+- product price
+- product quantity
 ## 6. Process
-The program compares the player's guess with the target number.
-If the guess is:
-- Too high → the program provides a "too high" message
-- Too low → the program provides a "too low" message
-- Correct → the player wins
+The program runs the calculator for the buyer that wants to count their groceries :
+- There's three option before the buyer start
+- buyer input the product name
+- buyer input the prices
+- buyer input the quantity
+- buyer input the amount of money being paid
+- you dont have enough money - The program reminds the buyer if they run short of money
+- Transaction Successfull - The program reminds the buyer if they succeed to pay
 ---
 ## 7. Output
 The program displays:
-- The result of each guess
-- Hints or feedback
-- The number of remaining attempts
-- The final game status (win/loss)
+- Product name:(input)
+- Product prices:(input)
+- Product quantity:(input)
+- Discount percentage
+- Total cost
 ---
 ## 8. Algorithm
 The algorithm used in the program is described in:
