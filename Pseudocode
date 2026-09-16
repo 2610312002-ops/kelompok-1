@@ -12,6 +12,7 @@ LOGARITHM
 START
   ASSIGN lagi = "y"
   ASSIGN n = 0
+  OUTPUT "=====DAFTAR BELANJA====="
 
   WHILE lagi = "y"
     OUTPUT "Nama barang:"
@@ -23,7 +24,7 @@ START
 
     ASSIGN subtotal = harga * jumlah 
     ASSIGN n = n + 1
-
+    OUTPUT nama + " " + harga + " x " + jumlah + "=" + subtotal
     OUTPUT "Tambah barang lagi? (y/n):"
     INPUT lagi 
   ENDWHILE
@@ -42,29 +43,23 @@ START
       ASSIGN persenDiskon = 0
   ENDIF
 
-  ASSIGN diskon = total * persenDiskon/100
+  ASSIGN diskon = total * persenDiskon / 100
   ASSIGN totalAkhir = total - diskon
 
+  OUTPUT "========== Ringkasan Transaksi =========="
+  OUTPUT "Total sebelum diskon : " + total
+  OUTPUT "Diskon (" + persenDiskon + "%) : " + diskon
   OUTPUT "Total akhir : " + totalAkhir
   OUTPUT "Jumlah uang dibayar: "
   INPUT bayar 
 
   WHILE bayar < totalAkhir 
     OUTPUT "Uang pembayaran kurang! Silahkan coba lagi."
+    OUTPUT "Jumlah uang dibayar : "
     INPUT bayar
   ENDWHILE
 
   ASSIGN kembali = bayar - totalAkhir
-
-  OUTPUT "========== Ringkasan Transaksi =========="
-
-  FOR i = 0 to n-1
-    OUPUT nama + " " + harga + " x " + jumlah + " = " + subtotal
-  ENDFOR
-
-  OUTPUT "Total sebelum diskon : " + total
-  OUTPUT "Diskon (" + persenDiskon + "%) : " + diskon
-  OUTPUT "Total akhir   : " + totalAkhir
   OUTPUT "Uang dibayar  : " + bayar
   OUTPUT "Uang kembali  : " + kembali
   OUTPUT "Terima kasih telah berbelanja!"
