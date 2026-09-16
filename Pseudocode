@@ -14,50 +14,54 @@ START
   ASSIGN n = 0
 
   WHILE lagi = "y"
+    OUTPUT "Nama barang:"
     INPUT nama
+    OUTPUT "Harga barang:"
     INPUT harga
+    OUTPUT "Jumlah barang:"
     INPUT jumlah
 
     ASSIGN subtotal = harga * jumlah 
     ASSIGN n = n + 1
 
+    OUTPUT "Tambah barang lagi? (y/n):"
     INPUT lagi 
   ENDWHILE
 
   ASSIGN total = 0
-  FOR i = 0 TO n-1
+  FOR i = 0 to n-1
     ASSIGN total = total + subtotal
   ENDFOR 
 
-  IF total >= 100000 THEN 
+  IF total >= 100000 
     ASSIGN persenDiskon = 10 
-  ELSE IF total >= 50000 THEN
-    ASSIGN persenDiskon = 5
   ELSE 
-    ASSIGN persenDiskon = 0
+    IF total >= 50000 
+      ASSIGN persenDiskon = 5
+    ELSE 
+      ASSIGN persenDiskon = 0
   ENDIF
 
-  ASSIGN diskon = total*persenDiskon/100
-  ASSIGN totalAkhir = total-diskon
+  ASSIGN diskon = total * persenDiskon/100
+  ASSIGN totalAkhir = total - diskon
 
   OUTPUT "Total akhir : " + totalAkhir
-
+  OUTPUT "Jumlah uang dibayar: "
   INPUT bayar 
 
-  WHILE bayar < total Akhir 
-    OUTPUT "Uang pembayaran kurang! silahkan coba lagi."
+  WHILE bayar < totalAkhir 
+    OUTPUT "Uang pembayaran kurang! Silahkan coba lagi."
     INPUT bayar
   ENDWHILE
 
-  ASSIGN kembali = bayar-totalAkhir
+  ASSIGN kembali = bayar - totalAkhir
 
-  OUTPUT "========== RINGKASAN TRANSAKSI =========="
+  OUTPUT "========== Ringkasan Transaksi =========="
 
-  FOR i = 0 TO n-1
+  FOR i = 0 to n-1
     OUPUT nama + " " + harga + " x " + jumlah + " = " + subtotal
   ENDFOR
 
-  OUTPUT "------------------------------------------"
   OUTPUT "Total sebelum diskon : " + total
   OUTPUT "Diskon (" + persenDiskon + "%) : " + diskon
   OUTPUT "Total akhir   : " + totalAkhir
