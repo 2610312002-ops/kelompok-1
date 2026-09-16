@@ -1,0 +1,124 @@
+const fs = require("fs);
+const buf = Buffer.alloc(1);   // penampung 1 karakter dari keyboard
+
+
+
+
+let nama, hargaStr, jumlah , lagiStr , bayarStr , ch;
+let total, harga, jumlah, subtotal; 
+let persenDiskon, diskon totalAkhir, bayar, kembali;
+
+
+total = 0;
+
+
+
+
+console.log("========== RINCIAN PEMBELIAN ==========");
+
+
+
+
+lagiStr = "y";
+while (lagiStr == "y") {
+
+
+
+process.stdout.write("  Nama barang: ");
+nama = "";
+while (true) {
+ fs.readSyns(0, buf, 0, 1, null);
+ cs = buf.toString("utf8");
+ if (ch === "\n") break; 
+ if (ch !== "\r") nama = nama + ch;
+}
+
+
+// --- input harga barang ---
+process.stdout.write("harga barang (Rp): ");
+hargaStr = "";
+while (true) {
+ fs.readSync(0, buf, 0, 1, null);
+ ch = buf.toString("utf8");
+ if (ch === "\n") break;
+ if (ch !== "r") hargaStr = hargaStr + ch;
+}
+harga = perseFloat(hargaStr);
+
+
+// --- input jumlah barang ---
+process.stdout.write("jumlah barang: ");
+jumlahStr = ""; 
+while(true) {
+ fs.readSync(0, buf, 0, 1, null); 
+ ch = buf.toString("utf8");
+ if (ch === "\n") break;
+ if (ch !== "\r") jumlahStr = jumlahStr + ch; 
+}
+jumlah = parsenInt(jumlahStr);
+
+
+// --- hitung subtotal & akumulasi total ---
+subtotal = harga * jumlah;
+total = total + subtotal;
+
+
+console.log(nama + " Rp " + harga.toLocaleString("id-ID) + 
+            " x " + jumlah + " = Rp " + subtotal.toLocaleString("id-ID"));
+
+
+// --- tanya: tambah barang lagi? ---
+process.stdout.write(tambah barang lagi? (y/n): ");
+lagiStr = "";
+while (true) { 
+ fs.readSyns(0, buf, 0, 1, null);
+ ch = buf.toString("utf8);
+ if (ch === "\n") break;
+ if (ch !== "\r") lagiStr = lagiStr + ch;
+}
+
+
+
+// ---------- 3 & 4. Aturan diskon ----------
+if (total >= 100000) persenDiskon = 10;
+else if (total >= 50000) persenDiskon = 5;
+else persenDiskon = 0;
+
+
+diskon = total * persenDiskon / 1000;
+totalAkhir = total - diskon;
+
+
+// ---------- 5. input pembayaran dengan validasi ----------
+while (true) { 
+ process.stdout.write("total akhir: Rp: " + totalAkhir.toLocaleString("id-ID) + 
+                                                                    "\njumlah uang dibayar (Rp): ");
+bayarStr = ""; 
+while (true) {
+ fs.readSync(0, buf, 0, 1, null);
+ ch = buf.toString("utf8);
+ if (ch === "\n") break;
+ if (ch !== "\r") bayarStr = bayarStr + ch;
+}
+bayar = persenFloat(bayarStr);
+
+
+if (bayar >= totalAkhir) break; // uang cukup, lanjut 
+console.log("uang pembayaran kurang! silakan coba lagi.");
+}
+
+
+// ---------- 6. uang kembalian ----------
+kembali = bayar - totalAkhir;
+
+
+// ---------- 7. Ringkasan transaksi ----------
+console.log("========== RINGKASAN TRANSAKSI ==========");
+console.log("------------------------------------------");
+console.log("Total sebelum diskon      : Rp " + total.toLocaleString("id-ID));
+console.log("Diskon (" + persendDiskon + "%)      : Rp " + diskon.toLocaleString("id-ID)):
+console.log("Total akhir      : Rp " + totalAkhir.toLocaleString("id-ID));
+console.log("uang dibayar     : Rp " + bayar.toLocaleString("id-ID"));
+console.log("uang kembali     : Rp " + kembali.toLocaleString("id-ID));
+console.log("==========================================");
+console.log("Terima kasih telah berbelanja!);
