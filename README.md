@@ -53,7 +53,7 @@ The program displays:
 ---
 ## 8. Algorithm
 The algorithm used in the program is described in:
-`pseudocode.txt`
+[Pseudocode](Pseudocode)
 ---
 ## 9. Flowchart
 The flowchart is created using Flowgorithm.
