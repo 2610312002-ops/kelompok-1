@@ -1,16 +1,16 @@
 PROGRAM Simple_Shopping_Calculator
 
 FUNCTION MAIN
-DECLARE
-  var nama, lagi : string 
-  var jumlah : integer 
-  var persenDiskon : integer
-  var harga, subtotal : real
-  var total, diskon, totalAkhir : real
-  var bayar, kembali : real
-
-LOGARITHM
 START
+
+  DECLARE
+    var nama, lagi : string 
+    var jumlah : integer 
+    var persenDiskon : integer
+    var harga, subtotal : real
+    var total, diskon, totalAkhir : real
+    var bayar, kembali : real
+
   ASSIGN lagi = "y"
   ASSIGN n = 0
   OUTPUT "=====DAFTAR BELANJA====="
