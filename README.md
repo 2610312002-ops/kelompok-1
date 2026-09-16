@@ -62,7 +62,7 @@ File:
 ---
 ## 10. JavaScript Implementation
 The JavaScript implementation of the program is available in:
-`JavaScript`
+[JavaScript](JavaScript)
 ---
 ## 11. Testing
 The program is tested using several test scenarios.
