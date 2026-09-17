@@ -67,4 +67,4 @@ The JavaScript implementation of the program is available in:
 ## 11. Testing
 The program is tested using several test scenarios.
 Testing documentation:
-[testing-cases.md](testing-cases.md)
+[test-cases.md](test-cases.md)
