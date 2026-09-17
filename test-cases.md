@@ -1,7 +1,5 @@
 # Testing - Simple Shopping Calculator
 
-Dokumentasi pengujian untuk program `program.js` menggunakan beberapa skenario input di Programiz JS Online Compiler untuk memastikan seluruh logika perhitungan, diskon, dan penanganan pembayaran berjalan dengan benar.
-
 ---
 
 ## Test Case 1: Pembelian Tanpa Diskon (< Rp 50.000)
