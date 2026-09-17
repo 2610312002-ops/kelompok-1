@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Simple Shopping Calculator (Fixed)"/>
+        <attribute name="authors" value=""/>
+        <attribute name="about" value="Kalkulator belanja sederhana dengan diskon - tanpa array/function"/>
+        <attribute name="saved" value="2026-09-17 08:29:08 AM"/>
+        <attribute name="created" value=""/>
+        <attribute name="edited" value=""/>
+        <attribute name="edited" value="UmFpc2FraGE7SURFQVBBRDsyMDI2LTA5LTE3OzA4OjIzOjIwIEFNOzQ7MjY3NA=="/>
+        <attribute name="edited" value="SFlQRSA3IEFNRCBYOC0xO0hZUEU3QU1EWDgtMTsyMDI2LTA5LTE3OzA4OjI5OjA4IEFNOzE7MzExMw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nama, lagi" type="String" array="False" size=""/>
+            <declare name="harga, subtotal, total, diskon, totalAkhir, bayar, kembali" type="Real" array="False" size=""/>
+            <declare name="jumlah, persenDiskon" type="Integer" array="False" size=""/>
+            <assign variable="lagi" expression="&quot;y&quot;"/>
+            <assign variable="total" expression="0"/>
+            <output expression="&quot;========== DAFTAR BELANJA ==========&quot;" newline="True"/>
+            <while expression="lagi = &quot;y&quot;">
+                <output expression="&quot;Nama barang: &quot;" newline="False"/>
+                <input variable="nama"/>
+                <output expression="&quot;Harga barang:Rp &quot;" newline="False"/>
+                <input variable="harga"/>
+                <output expression="&quot;Jumlah barang: &quot;" newline="False"/>
+                <input variable="jumlah"/>
+                <assign variable="subtotal" expression="harga * jumlah"/>
+                <assign variable="total" expression="total + subtotal"/>
+                <output expression="nama &amp; &quot;  &quot; &amp; harga &amp; &quot; x &quot; &amp; jumlah &amp; &quot; = &quot; &amp; subtotal" newline="True"/>
+                <output expression="&quot;Tambah barang lagi? (y/n): &quot;" newline="False"/>
+                <input variable="lagi"/>
+            </while>
+            <if expression="total &gt;= 100000">
+                <then>
+                    <assign variable="persenDiskon" expression="10"/>
+                </then>
+                <else>
+                    <if expression="total &gt;= 50000">
+                        <then>
+                            <assign variable="persenDiskon" expression="5"/>
+                        </then>
+                        <else>
+                            <assign variable="persenDiskon" expression="0"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="diskon" expression="total * persenDiskon / 100"/>
+            <assign variable="totalAkhir" expression="total - diskon"/>
+            <output expression="&quot;========== RINGKASAN TRANSAKSI ==========&quot;" newline="True"/>
+            <output expression="&quot;Total sebelum diskon :Rp &quot; &amp; total" newline="True"/>
+            <output expression="&quot;Diskon (&quot; &amp; persenDiskon &amp; &quot;%):Rp &quot; &amp; diskon" newline="True"/>
+            <output expression="&quot;Total akhir          :Rp &quot; &amp; totalAkhir" newline="True"/>
+            <output expression="&quot;Jumlah uang dibayar:Rp &quot;" newline="False"/>
+            <input variable="bayar"/>
+            <while expression="bayar &lt; totalAkhir">
+                <output expression="&quot;Uang pembayaran kurang! Silakan coba lagi.&quot;" newline="True"/>
+                <output expression="&quot;Jumlah uang dibayar:Rp &quot;" newline="False"/>
+                <input variable="bayar"/>
+            </while>
+            <assign variable="kembali" expression="bayar - totalAkhir"/>
+            <output expression="&quot;Uang dibayar         :Rp &quot; &amp; bayar" newline="True"/>
+            <output expression="&quot;Uang kembali         :Rp &quot; &amp; kembali" newline="True"/>
+            <output expression="&quot;Terima kasih telah berbelanja!&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
