@@ -1,1 +1,69 @@
+// Deklarasi variabel
+let nama;
+let harga;
+let jumlah;
+let subtotal;
+let total;
+let persenDiskon;
+let diskon;
+let totalAkhir;
+let bayar;
+let kembali;
+let lagi;
 
+// Inisialisasi awal
+lagi = "y";
+total = 0;
+
+console.log("========== DAFTAR BELANJA ==========");
+
+
+while (lagi == "y") {
+    // prompt() digunakan untuk memunculkan pop-up input di browser
+    nama = prompt("Nama barang: ");
+    harga = parseFloat(prompt("Harga barang:Rp"));
+    jumlah = parseInt(prompt("Jumlah barang: "));
+    
+    subtotal = harga * jumlah;
+    total = total + subtotal;
+    
+    console.log(nama + "  " + harga + " x " + jumlah + " =Rp " + subtotal);
+    
+    lagi = prompt("Tambah barang lagi? (y/n): ");
+}
+
+// Menentukan diskon berdasarkan total belanja
+if (total >= 100000) {
+    persenDiskon = 10;
+} else {
+    if (total >= 50000) {
+        persenDiskon = 5;
+    } else {
+        persenDiskon = 0;
+    }
+}
+
+// Menghitung total akhir
+diskon = total * persenDiskon / 100;
+totalAkhir = total - diskon;
+
+console.log("========== RINGKASAN TRANSAKSI ==========");
+console.log("Total sebelum diskon :Rp " + total);
+console.log("Diskon (" + persenDiskon + "%): " + diskon);
+console.log("Total akhir          :Rp " + totalAkhir);
+
+// Proses pembayaran
+bayar = parseFloat(prompt("Jumlah uang dibayar:Rp "));
+
+// Looping jika uang pembayaran kurang
+while (bayar < totalAkhir) {
+    console.log("Uang pembayaran kurang! Silakan coba lagi.");
+    bayar = parseFloat(prompt("Jumlah uang dibayar:Rp "));
+}
+
+// Menghitung kembalian
+kembali = bayar - totalAkhir;
+
+console.log("Uang dibayar         :Rp " + bayar);
+console.log("Uang kembali         :Rp " + kembali);
+console.log("Terima kasih telah berbelanja!");
