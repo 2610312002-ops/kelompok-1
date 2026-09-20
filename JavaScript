@@ -41,29 +41,4 @@ if (total >= 100000) {
     } else {
         persenDiskon = 0;
     }
-}
 
-// Menghitung total akhir
-diskon = total * persenDiskon / 100;
-totalAkhir = total - diskon;
-
-console.log("========== RINGKASAN TRANSAKSI ==========");
-console.log("Total sebelum diskon : " + total);
-console.log("Diskon (" + persenDiskon + "%): " + diskon);
-console.log("Total akhir          : " + totalAkhir);
-
-// Proses pembayaran
-bayar = parseFloat(prompt("Jumlah uang dibayar: "));
-
-// Looping jika uang pembayaran kurang
-while (bayar < totalAkhir) {
-    console.log("Uang pembayaran kurang! Silakan coba lagi.");
-    bayar = parseFloat(prompt("Jumlah uang dibayar: "));
-}
-
-// Menghitung kembalian
-kembali = bayar - totalAkhir;
-
-console.log("Uang dibayar         : " + bayar);
-console.log("Uang kembali         : " + kembali);
-console.log("Terima kasih telah berbelanja!");
