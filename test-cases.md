@@ -1,123 +1,122 @@
 # Testing
 
-## Test Case 1: Pembelian Tanpa Diskon (< Rp 50.000)
+## Test Case 1: Pembelian Single Item Tanpa Diskon
 
-**Input:**  
-- Barang 1: buku (Harga: 10000, Qty: 2) -> Subtotal: 20000  
-- Tambah barang lagi?: n  
-- Uang dibayar: 50000  
+**Input:**
+- Nama barang: `buku`
+- Harga barang: `10000`
+- Jumlah barang: `2`
+- Tambah barang lagi?: `n`
+- Uang dibayar: `50000`
 
-**Expected Output:** 
-Total sebelum diskon : 20000  
-Diskon (0%): 0  
-Total akhir : 20000  
-Uang dibayar : 50000  
-Uang kembali : 30000  
+**Expected Output:**
+- Total sebelum diskon: Rp 20000
+- Diskon (0%): Rp 0
+- Total akhir: Rp 20000
+- Uang kembali: Rp 30000
 
-**Actual Output:** 
-Total sebelum diskon : 20000  
-Diskon (0%): 0  
-Total akhir : 20000  
-Uang dibayar : 50000  
-Uang kembali : 30000  
-
-**Status:** PASS
-
----
-
-## Test Case 2: Pembelian Diskon 5% (Rp 50.000 - Rp 99.000)
-
-**Input:**  
-- Barang 1: pulpen (Harga: 20000, Qty: 3) -> Subtotal: 60000  
-- Tambah barang lagi?: n  
-- Uang dibayar: 100000  
-
-**Expected Output:**  
-Total sebelum diskon : 60000  
-Diskon (5%): 3000  
-Total akhir : 57000  
-Uang dibayar : 100000  
-Uang kembali : 43000  
-
-**Actual Output:**  
-Total sebelum diskon : 60000  
-Diskon (5%): 3000  
-Total akhir : 57000  
-Uang dibayar : 100000  
-Uang kembali : 43000  
+**Actual Output:**
+- Total sebelum diskon: Rp 20000
+- Diskon (0%): 0
+- Total akhir: Rp 20000
+- Uang kembali: Rp 30000
 
 **Status:** PASS
 
 ---
 
-## Test Case 3: Pembelian Diskon 10% (>= Rp 100.000)
+## Test Case 2: Pembelian Single Item Dengan Diskon 5%
 
-**Input:** 
-- Barang 1: sepatu (Harga: 150000, Qty: 1) -> Subtotal: 150000  
-- Tambah barang lagi?: n  
-- Uang dibayar: 200000  
+**Input:**
+- Nama barang: `pulpen`
+- Harga barang: `20000`
+- Jumlah barang: `3`
+- Tambah barang lagi?: `n`
+- Uang dibayar: `100000`
 
-**Expected Output:**  
-Total sebelum diskon : 150000  
-Diskon (10%): 15000  
-Total akhir : 135000  
-Uang dibayar : 200000  
-Uang kembali : 65000  
+**Expected Output:**
+- Total sebelum diskon: Rp 60000
+- Diskon (5%): Rp 3000
+- Total akhir: Rp 57000
+- Uang kembali: Rp 43000
 
-**Actual Output:**  
-Total sebelum diskon : 150000  
-Diskon (10%): 15000  
-Total akhir : 135000  
-Uang dibayar : 200000  
-Uang kembali : 65000  
-
-**Status:** PASS
-
----
-
-## Test Case 4: Multiple Items (Lebih dari 1 Barang)
-
-**Input:** 
-- Barang 1: pensil (Harga: 5000, Qty: 2) -> Subtotal: 10000  
-- Tambah barang lagi?: y  
-- Barang 2: map (Harga: 10000, Qty: 4) -> Subtotal: 40000  
-- Tambah barang lagi?: n  
-- Uang dibayar: 50000  
-
-**Expected Output:**  
-Total sebelum diskon : 50000  
-Diskon (5%): 2500  
-Total akhir : 47500  
-Uang dibayar : 50000  
-Uang kembali : 2500  
-
-**Actual Output:**  
-Total sebelum diskon : 50000  
-Diskon (5%): 2500  
-Total akhir : 47500  
-Uang dibayar : 50000  
-Uang kembali : 2500  
+**Actual Output:**
+- Total sebelum diskon: Rp 60000
+- Diskon (5%): 3000
+- Total akhir: Rp 57000
+- Uang kembali: Rp 43000
 
 **Status:** PASS
 
 ---
 
-## Test Case 5: Penanganan Uang Pembayaran Kurang
+## Test Case 3: Pembelian Single Item Dengan Diskon 10%
 
-**Input:**  
-- Barang 1: baju (Harga: 50000, Qty: 1) -> Subtotal: 50000  
-- Tambah barang lagi?: n  
-- Uang dibayar (1): 40000 (Kurang)  
-- Uang dibayar (2): 50000 (Cukup)  
+**Input:**
+- Nama barang: `sepatu`
+- Harga barang: `150000`
+- Jumlah barang: `1`
+- Tambah barang lagi?: `n`
+- Uang dibayar: `200000`
 
-**Expected Output:**  
-Uang pembayaran kurang! Silakan coba lagi.  
-Uang dibayar : 50000  
-Uang kembali : 2500  
+**Expected Output:**
+- Total sebelum diskon: Rp 150000
+- Diskon (10%): Rp 15000
+- Total akhir: Rp 135000
+- Uang kembali: Rp 65000
 
-**Actual Output:**  
-Uang pembayaran kurang! Silakan coba lagi.  
-Uang dibayar : 50000  
-Uang kembali : 2500  
+**Actual Output:**
+- Total sebelum diskon: Rp 150000
+- Diskon (10%): 15000
+- Total akhir: Rp 135000
+- Uang kembali: Rp 65000
+
+**Status:** PASS
+
+---
+
+## Test Case 4: Pembelian Multiple Items
+
+**Input:**
+- Barang 1: `pensil`, Harga: `5000`, Jumlah: `2`
+- Tambah barang lagi?: `y`
+- Barang 2: `map`, Harga: `10000`, Jumlah: `4`
+- Tambah barang lagi?: `n`
+- Uang dibayar: `50000`
+
+**Expected Output:**
+- Total sebelum diskon: Rp 50000
+- Diskon (5%): Rp 2500
+- Total akhir: Rp 47500
+- Uang kembali: Rp 2500
+
+**Actual Output:**
+- Total sebelum diskon: Rp 50000
+- Diskon (5%): 2500
+- Total akhir: Rp 47500
+- Uang kembali: Rp 2500
+
+**Status:** PASS
+
+---
+
+## Test Case 5: Pembayaran Kurang (Validasi Input Uang)
+
+**Input:**
+- Nama barang: `baju`
+- Harga barang: `50000`
+- Jumlah barang: `1`
+- Tambah barang lagi?: `n`
+- Uang dibayar (1): `40000`
+- Uang dibayar (2): `50000`
+
+**Expected Output:**
+- Menampilkan pesan error "Uang pembayaran kurang! Silakan coba lagi."
+- Meminta input ulang uang pembayaran
+- Uang kembali: Rp 2500
+
+**Actual Output:**
+- Menampilkan pesan "Uang pembayaran kurang! Silakan coba lagi."
+- Menerima input `50000` dan menampilkan Uang kembali: Rp 2500
 
 **Status:** PASS
