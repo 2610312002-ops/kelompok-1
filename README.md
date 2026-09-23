@@ -5,6 +5,7 @@
 **Group:** 1
 ### Group Members
 | No. | Name | Student ID | Role |
+|---|---|---|---|
 | 1 | Raisakha Afanugroho | 2610312002 | Project Coordinator |
 | 2 | Zahratu Asyifa | 2610312007 | Pseudocode |
 | 3 | Jescenia Putri Kodri | 2610312010 | Flowchart |
