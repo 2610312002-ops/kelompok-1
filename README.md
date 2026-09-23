@@ -33,6 +33,7 @@ This project is designed to apply the following programming concepts:
 - product name
 - product price
 - product quantity
+---
 ## 6. Process
 The program runs the calculator for the buyer that wants to count their groceries :
 - There's three option before the buyer start
