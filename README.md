@@ -17,7 +17,7 @@
 |---|---|---|---|
 | 1 | Raisakha Afanugroho | 2610312002 | Project Coordinator |
 | 2 | Zahratu Asyita | 2610312007 | Pseudocode |
-| 3 | Jescenia Putri Kodri | 2610312010 | Flowchart |
+| 3 | Jescenia Putri Kodri | 2610312013 | Flowchart |
 | 4 | Chesilia Putri Laurena | 2610312023 | JavaScript |
 | 5 | Ilona Rindiani Orvala | 2610312005 | Testing & Documentation |
 
