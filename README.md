@@ -1,4 +1,4 @@
-![Image Alt](https://github.com/2610312002-ops/kelompok-1/blob/154d6a0e388e739e8696b48a30927b23c92b86a5/Simple%20Shopping%20Calculator.png)
+![Image Alt](https://github.com/2610312002-ops/kelompok-1/blob/154d6a0e388e739e8696b48a30927b23c92b86a5/Simple%20Shopping%20Calculator.png?raw=true)
 
 
 
